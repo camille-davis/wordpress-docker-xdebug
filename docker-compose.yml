@@ -1,0 +1,31 @@
+services:
+  wordpress:
+    build:
+      dockerfile: ./Dockerfile
+    depends_on:
+      - db
+    ports:
+      - 8081:80
+    restart: always
+    extra_hosts:
+      - 'host.docker.internal:host-gateway'
+    environment:
+      - WORDPRESS_DB_HOST=db:3306
+      - WORDPRESS_DB_USER=mysql_user
+      - WORDPRESS_DB_PASSWORD=mysql_password
+      - WORDPRESS_DB_NAME=mysql_database
+      - WORDPRESS_DEBUG=true
+    volumes:
+      - ./:/var/www/html
+  db:
+    image: mysql:latest
+    restart: always
+    environment:
+      - MYSQL_ROOT_PASSWORD=mysql_root_password
+      - MYSQL_DATABASE=mysql_database
+      - MYSQL_USER=mysql_user
+      - MYSQL_PASSWORD=mysql_password
+    volumes:
+      - db_data:/var/lib/mysql
+volumes:
+  db_data:
