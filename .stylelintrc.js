@@ -1,0 +1,8 @@
+module.exports = {
+  extends: [ '@wordpress/stylelint-config' ],
+  rules: {
+    'selector-id-pattern': null
+  }
+};
+
+

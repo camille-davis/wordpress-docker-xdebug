@@ -1,0 +1,20 @@
+{
+  "name": "camille-davis/local-wordpress",
+  "description": "Local WordPress site with XDebug, docker, and linting",
+  "type": "project",
+  "license": "GPL-2.0-or-later",
+  "require-dev": {
+    "squizlabs/php_codesniffer": "^3.10",
+    "wp-coding-standards/wpcs": "^3.1",
+    "phpcompatibility/php-compatibility": "^9.3"
+  },
+  "scripts": {
+    "lint:php": "phpcs",
+    "lint:php:fix": "phpcbf"
+  },
+  "config": {
+    "sort-packages": true
+  }
+}
+
+

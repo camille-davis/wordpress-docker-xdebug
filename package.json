@@ -1,0 +1,20 @@
+{
+  "name": "wordpress-docker-xdebug",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Local WordPress site with XDebug, docker, and linting",
+  "scripts": {
+    "lint:js": "eslint",
+    "lint:css": "stylelint",
+    "lint": "npm run lint:js -- && npm run lint:css --"
+  },
+  "devDependencies": {
+    "@wordpress/eslint-plugin": "^21.1.0",
+    "@wordpress/stylelint-config": "^21.1.0",
+    "eslint": "^8.57.0",
+    "stylelint": "^14.2.0",
+    "stylelint-config-standard": "^24.0.0"
+  }
+}
+
+

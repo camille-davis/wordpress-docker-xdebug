@@ -27,3 +27,30 @@ Then add group write (and execute, for directories) permissions to the files:
 ```
 
 (I encountered this problem on Linux but not on MacOs.)
+
+## Linting
+
+Install tooling:
+```
+composer install
+npm install
+```
+
+### Lint PHP
+
+```
+vendor/bin/phpcs <path>
+vendor/bin/phpcbf <path>
+```
+Or:
+```
+composer lint:php -- <path>
+composer lint:php:fix -- <path>
+```
+
+### Lint CSS and JS
+
+```
+npm run lint:css -- "<path>/**/*.{css,scss}"
+npm run lint:js -- "<path>/**/*.js"
+```
